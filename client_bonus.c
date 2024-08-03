@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:42:28 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/03 11:09:00 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/03 23:39:25 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	send_bits(int pid, char c)
 			res += kill(pid, SIGUSR1);
 		else if (((unsigned char)(c >> (7 - bit)) & 1) == 1)
 			res += kill(pid, SIGUSR2);
-		usleep(20);
+		usleep(100);
 		bit++;
 	}
 	return (res);

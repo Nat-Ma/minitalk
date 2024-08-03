@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:50:01 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/03 11:18:16 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/03 23:31:59 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,7 @@ int	main(void)
 
 	pid = getpid();
 	ft_printf("PID %d\n", pid);
+	sigemptyset(&action.sa_mask);
 	action.sa_flags = 0;
 	action.sa_handler = sig_handler;
 	sigaction(SIGUSR1, &action, NULL);

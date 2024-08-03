@@ -6,7 +6,7 @@
 /*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:42:28 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/03 10:34:58 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/03 23:36:05 by natalierauh      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ void	send_bits(int pid, char c)
 	int	bit;
 
 	bit = 0;
-	ft_printf("client: %c\n", c);
 	while (bit < 8)
 	{
 		ft_printf("%d", ((c >> (7 - bit)) & 1) == 1);
@@ -25,10 +24,9 @@ void	send_bits(int pid, char c)
 			kill(pid, SIGUSR1);
 		else if (((unsigned char)(c >> (7 - bit)) & 1) == 1)
 			kill(pid, SIGUSR2);
-		usleep(50);
+		usleep(100);
 		bit++;
 	}
-	ft_printf("\n");
 }
 
 int	main(int argv, char **argc)
