@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   server.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:50:01 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/03 23:27:45 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/15 17:32:12 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/minitalk.h"
+#include <signal.h>
 
 int	recursive_power(int n, int power)
 {

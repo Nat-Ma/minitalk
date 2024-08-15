@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: natalierauh <natalierauh@student.42.fr>    +#+  +:+       +#+        */
+/*   By: nrauh <nrauh@student.42berlin.de>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/01 10:42:28 by natalierauh       #+#    #+#             */
-/*   Updated: 2024/08/03 23:36:05 by natalierauh      ###   ########.fr       */
+/*   Updated: 2024/08/15 17:37:30 by nrauh            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@ void	send_bits(int pid, char c)
 	bit = 0;
 	while (bit < 8)
 	{
-		ft_printf("%d", ((c >> (7 - bit)) & 1) == 1);
+		//ft_printf("%d", ((c >> (7 - bit)) & 1) == 1);
 		if (((unsigned char)(c >> (7 - bit)) & 1) == 0)
 			kill(pid, SIGUSR1);
 		else if (((unsigned char)(c >> (7 - bit)) & 1) == 1)
 			kill(pid, SIGUSR2);
-		usleep(100);
+		usleep(50);
 		bit++;
 	}
 }
